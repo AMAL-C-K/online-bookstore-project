@@ -1,0 +1,156 @@
+body{
+    font-family: Arial, sans-serif;
+    margin:0;
+    background:#f5f5f5;
+}
+
+/* NAVBAR */
+    .navbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: #4facfe;
+        padding: 10px 20px;
+        color: white;
+    }
+
+    .logo {
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    
+    .nav-links a {
+        color: white;
+        margin-left: 15px;
+        text-decoration: none;
+        font-size: 14px;
+    }
+
+    .nav-links a:hover {
+        text-decoration: underline;
+    }
+
+
+/* PAGE */
+.product-container{
+    width:90%;
+    max-width:1200px;
+    margin:40px auto;
+    background:white;
+    border-radius:10px;
+    padding:30px;
+    display:flex;
+    gap:40px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* IMAGE */
+.product-image{
+    flex:1;
+}
+
+.product-image img{
+    width:100%;
+    max-width:400px;
+    height:500px;
+    object-fit:contain;
+    border-radius:10px;
+}
+
+/* DETAILS */
+.product-details{
+    flex:1;
+}
+
+.product-title{
+    font-size:32px;
+    font-weight:bold;
+    margin-bottom:10px;
+}
+
+
+.author{
+    color:gray;
+    margin-bottom:15px;
+    font-size:18px;
+}
+.genre{
+    color:rgb(10, 10, 10);
+    margin-bottom:15px;
+    font-size:15px;
+}
+
+.price{
+    font-size:28px;
+    color:#4facfe;
+    font-weight:bold;
+    margin-bottom:15px;
+}
+
+.stock{
+    font-size:16px;
+    margin-bottom:20px;
+    color:green;
+}
+
+.description{
+    line-height:1.7;
+    color:#444;
+    margin-bottom:30px;
+}
+
+/* BUTTONS */
+.button-group{
+    display:flex;
+    gap:15px;
+}
+
+.btn{
+    padding:12px 25px;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+    font-size:16px;
+    transition:0.3s;
+}
+
+.cart-btn{
+    background:#ff9800;
+    color:white;
+}
+
+.cart-btn:hover{
+    background:#e68900;
+}
+
+.checkout-btn{
+    background:#4facfe;
+    color:white;
+}
+
+.checkout-btn:hover{
+    background:#2196f3;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+
+    .product-container{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .product-image img{
+        height:auto;
+    }
+
+    .button-group{
+        flex-direction:column;
+        width:100%;
+    }
+
+    .btn{
+        width:100%;
+    }
+}

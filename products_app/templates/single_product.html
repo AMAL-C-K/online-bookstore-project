@@ -1,0 +1,89 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'single_product.css' %}">
+    <title>Book Details</title>
+
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <div class="navbar">
+        <div class="logo"><a style="text-decoration: none;" href="/">📚 BookStore</a></div>
+
+
+
+        <div class="nav-links">
+            <a href="/">Home</a>
+            {% if user.is_authenticated %}
+            <a href="{% url 'cart' %}">My Cart</a>
+            <a href="{% url 'orders' %}">My Orders</a>
+            <a href="#">👤 {{request.user}}</a>
+            <a href="{% url 'logout' %}">❌Logout</a>
+            {% else %}
+
+            <a href="{% url 'signin' %}">Login</a>
+
+            {% endif %}
+        </div>
+    </div>
+
+
+    <div class="product-container">
+
+        <!-- IMAGE -->
+        <div class="product-image">
+            <img src="{{book.image.url}}">
+        </div>
+
+        <!-- DETAILS -->
+        <div class="product-details">
+
+            <div class="product-title">
+                {{book.title}}
+            </div>
+
+            <div class="author">
+                by {{book.author}}
+            </div>
+            <div class="genre">
+                {{book.genre}}
+            </div>
+
+            <div class="price">
+                ₹{{book.price}}
+            </div>
+
+            <div class="stock">
+                {{book.stock}} Stocks Available
+            </div>
+
+            <div class="description">
+                {{book.short_description}}
+            </div>
+
+            <!-- BUTTONS -->
+            <div class="button-group">
+
+                <button class="btn cart-btn">
+                    <a href="{% url 'add' book.id %}" style="text-decoration: none;">Add to Cart</a>
+                </button>
+
+                <button class="btn checkout-btn">
+                    <a href="/" style="text-decoration: none;">Back To Home</a>
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
